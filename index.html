@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Yasmin &amp; Bianca | Arquitetura & Interiores</title>
+<meta name="description" content="Yasmin &amp; Bianca — arquitetura e interiores em Curitiba, São José dos Pinhais e Cuiabá. Espaços pensados para serem vividos.">
+<meta property="og:title" content="Yasmin &amp; Bianca | Arquitetura & Interiores">
+<meta property="og:description" content="Espaços pensados para serem vividos.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500&display=swap">
+<style>
+/* ===== TOKENS ===== */
+:root{--bg:#efebe4;--ink:#11100f;--mute:#77726a;--stone:#cfc7b8;--line:rgba(17,16,15,.16);--bz:#8a6a4b;
+--serif:'Instrument Serif',Georgia,serif;--sans:'Manrope',system-ui,sans-serif;--ease:cubic-bezier(.19,.8,.1,1);color-scheme:light;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit;margin:0}
+body{background:var(--bg);color:var(--ink);font:300 15px/1.7 var(--sans);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;text-align:left}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:.92;letter-spacing:-.015em}
+em{font-style:italic;color:var(--bz)}
+.mi{font:500 10px/1.5 var(--sans);letter-spacing:.26em;text-transform:uppercase}
+.w{padding:0 clamp(20px,5vw,80px)}.sec{position:relative;padding:clamp(90px,13vw,190px) 0}
+.n{position:absolute;top:30px;right:clamp(20px,5vw,80px);color:var(--mute)}
+.h2{font-size:clamp(46px,8.5vw,140px)}
+/* ===== IMAGENS (placeholders) — troque com style="--img:url(foto.jpg)" ===== */
+.ph{position:relative;overflow:hidden;background:#8a8378 var(--img,none) center/cover}
+.ph::before{content:"";position:absolute;inset:0;background:var(--g);transition:transform 1.8s var(--ease)}
+.ph[style*="--img"]::before,.ph[style*="--img"]::after{display:none}
+.ph::after{content:attr(data-l);position:absolute;left:14px;top:12px;font:500 9px var(--sans);letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+.hv:hover::before{transform:scale(1.07)}
+.a{--g:repeating-linear-gradient(90deg,transparent 0 11%,rgba(0,0,0,.14) 11% 11.4%),linear-gradient(115deg,rgba(255,236,205,.3) 30%,transparent 31% 60%,rgba(0,0,0,.25)),linear-gradient(#b9afa1,#6f675b)}
+.b{--g:linear-gradient(90deg,#d9d1c3 0 38%,#1c1a18 38% 41%,#c4baa9 41% 74%,#25221f 74% 76%,#e4dccd 76%),linear-gradient(transparent 55%,rgba(0,0,0,.35))}
+.c{--g:repeating-linear-gradient(0deg,rgba(0,0,0,.09) 0 1px,transparent 1px 38px),linear-gradient(150deg,#7a6652,#35291f)}
+.d{--g:radial-gradient(ellipse at 75% 15%,rgba(255,240,215,.45),transparent 50%),linear-gradient(#a2a8a6,#4b514f)}
+.e{--g:linear-gradient(100deg,transparent 45%,rgba(255,236,200,.35) 46% 58%,transparent 59%),linear-gradient(#d0c7b6,#867d6d)}
+/* ===== HEADER ===== */
+header{position:fixed;inset:0 0 auto;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:calc(22px + env(safe-area-inset-top,0px)) clamp(20px,5vw,80px) 22px;color:#fff;mix-blend-mode:difference}
+header nav{display:flex;gap:38px}.logo{font:500 12px var(--sans);letter-spacing:.36em}
+.bg{display:none;width:44px;height:44px;margin-right:-10px}.bg i{display:block;width:26px;height:1px;background:currentColor;margin:6px auto;transition:.5s var(--ease)}
+.open .bg i:first-child{transform:translateY(3.5px) rotate(20deg)}.open .bg i:last-child{transform:translateY(-3.5px) rotate(-20deg)}
+#pg{position:fixed;left:0;top:0;height:2px;width:100%;transform:scaleX(0);transform-origin:left;background:var(--bz);z-index:60}
+.menu{position:fixed;inset:0;z-index:40;background:var(--ink);color:var(--bg);display:flex;flex-direction:column;justify-content:center;padding:0 28px;clip-path:inset(0 0 100% 0);transition:clip-path .9s var(--ease)}
+.open .menu{clip-path:inset(0)}.menu a{font:400 clamp(48px,14vw,86px)/1.12 var(--serif)}.menu .mi{margin-top:40px;color:var(--mute)}
+/* ===== HERO ===== */
+.hero{position:relative;min-height:100svh;display:grid;grid-template-columns:42fr 58fr;background:var(--bg);overflow:hidden}
+.hero .ph{grid-column:2;--g:linear-gradient(180deg,rgba(0,0,0,.2),transparent 35%,rgba(0,0,0,.5)),linear-gradient(100deg,transparent 45%,rgba(255,236,205,.3) 46% 62%,transparent 63%),repeating-linear-gradient(90deg,transparent 0 14%,rgba(0,0,0,.12) 14% 14.3%),linear-gradient(#b4aa9b,#4e473d);clip-path:inset(0 0 100% 0);transition:clip-path 1.8s var(--ease) .2s}
+.loaded .hero .ph{clip-path:inset(0)}
+.hero h1{position:absolute;left:clamp(20px,5vw,80px);top:50%;transform:translateY(-54%);font-size:clamp(70px,16.5vw,270px);line-height:.8;color:#fff;mix-blend-mode:difference;z-index:2}
+.hero h1 span{display:block;overflow:hidden;padding-bottom:.06em}.hero h1 b{display:block;font-weight:400;transform:translateY(105%);transition:transform 1.6s var(--ease) .7s}
+.hero h1 span+span b{transition-delay:.9s;margin-left:.9em}.loaded .hero h1 b{transform:none}
+.hero .cap{position:absolute;left:clamp(20px,5vw,80px);bottom:34px;right:clamp(20px,5vw,80px);display:flex;justify-content:space-between;align-items:flex-end;gap:20px;z-index:2;color:#fff;mix-blend-mode:difference}
+.hero .top{position:absolute;left:clamp(20px,5vw,80px);top:calc(100px + env(safe-area-inset-top,0px));z-index:2;color:#fff;mix-blend-mode:difference}
+.hero .q{font:italic 400 clamp(20px,2.2vw,30px)/1.2 var(--serif);max-width:300px;margin-bottom:14px}
+.f{opacity:0;transform:translateY(14px);transition:1.4s var(--ease) 1.5s}.loaded .f{opacity:1;transform:none}
+.sc{writing-mode:vertical-rl;display:flex;align-items:center;gap:12px}.sc::after{content:"";width:1px;height:60px;background:currentColor;animation:sl 2.4s var(--ease) infinite;transform-origin:top}
+@keyframes sl{0%{transform:scaleY(0)}60%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
+/* ===== REVEAL ===== */
+.r{opacity:0;transform:translateY(40px);transition:opacity 1.2s var(--ease),transform 1.2s var(--ease)}.r.in{opacity:1;transform:none}
+.m{clip-path:inset(0 0 100% 0);transition:clip-path 1.6s var(--ease)}.m.in{clip-path:inset(0)}
+/* ===== PROJETOS ===== */
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:clamp(50px,8vw,120px)}
+.gp{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(50px,7vw,110px) 24px}
+.pj{display:block;width:100%;cursor:pointer;position:relative}.pj .ph{width:100%}
+.pj .in{position:absolute;inset:auto 0 0;padding:60px 22px 20px;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.6));opacity:0;transform:translateY(14px);transition:.9s var(--ease)}
+.pj:hover .in{opacity:1;transform:none}.pj .in p{max-width:280px;margin-top:6px;font-size:13px}
+.cp{display:flex;justify-content:space-between;gap:12px;padding-top:14px;border-bottom:1px solid var(--line);padding-bottom:12px}
+.cp h3{font-size:clamp(28px,3.2vw,46px)}.cp .mi{color:var(--mute);padding-top:8px}
+.p1{grid-column:1/9}.p1 .ph{aspect-ratio:16/10}.p2{grid-column:10/13;margin-top:22vw}.p2 .ph{aspect-ratio:3/4}
+.p3{grid-column:3/7}.p3 .ph{aspect-ratio:1}.p4{grid-column:8/13;margin-top:-9vw}.p4 .ph{aspect-ratio:4/3}
+/* ===== DESTAQUE ===== */
+.ft{position:relative;padding:0}.ft .ph{height:min(92svh,860px)}
+.ft .card{position:relative;margin:-14vw 0 0 auto;width:min(520px,86%);background:var(--bg);padding:clamp(28px,4vw,56px);margin-right:clamp(20px,5vw,80px)}
+.ft h2{font-size:clamp(48px,6.4vw,100px);margin:14px 0 18px}.ft q{display:block;font:italic 400 clamp(22px,2.3vw,30px)/1.2 var(--serif);quotes:none;margin-bottom:30px}
+.ft dl{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}.ft dt{padding:12px 0;border-bottom:1px solid var(--line)}
+.ft .sec{padding-bottom:0}
+/* ===== CASACOR ===== */
+.dk{background:var(--ink);color:var(--bg)}.cas{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,100px);align-items:center}
+.cas h2{font-size:clamp(44px,7vw,116px)}.cas p{color:#aea89d;max-width:420px;margin:28px 0 42px;font-size:17px}.cas .ph{aspect-ratio:3/4}
+.btn{display:inline-flex;align-items:center;justify-content:space-between;gap:30px;padding:20px 32px;min-height:56px;border:1px solid currentColor;transition:.6s var(--ease)}
+.dk .btn:hover{background:var(--bg);color:var(--ink)}
+/* ===== ESCRITÓRIO ===== */
+.off h2 span{display:block;margin-left:clamp(0px,14vw,240px)}.duo{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;margin-top:clamp(60px,9vw,130px)}
+.pe:first-child{grid-column:1/6}.pe:last-child{grid-column:8/13;margin-top:14vw}.pe .ph{aspect-ratio:3/4}
+.pe h3{font-size:clamp(32px,3.6vw,52px);margin:18px 0 4px}.pe p{color:var(--mute);max-width:380px}.pe .mi{margin-bottom:12px}
+/* ===== FILOSOFIA ===== */
+.ph2{background:var(--stone);min-height:100svh;display:flex;align-items:center}
+.ph2 h2{font-size:clamp(52px,12vw,200px);line-height:.9;text-transform:uppercase}.ph2 h2 .wd{color:rgba(17,16,15,.2);transition:color .5s}.ph2 h2 .wd.on{color:var(--ink)}
+.ph2 .sm{display:flex;gap:clamp(20px,5vw,80px);flex-wrap:wrap;margin-top:56px;color:var(--mute)}.ph2 .sm p{max-width:250px}
+/* ===== PROCESSO ===== */
+.pr{display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(30px,6vw,100px)}.pr .st{position:sticky;top:20vh;align-self:start}
+.pr ol{list-style:none;position:relative;padding-left:44px}.pr ol::before,.pr ol::after{content:"";position:absolute;left:0;top:0;bottom:0;width:1px;background:var(--line)}
+.pr ol::after{background:var(--bz);transform-origin:top;transform:scaleY(var(--p,0))}
+.pr li{padding-bottom:clamp(60px,9vw,130px);position:relative;opacity:.3;transition:opacity .8s}.pr li.on{opacity:1}
+.pr li::before{content:"";position:absolute;left:-48px;top:14px;width:9px;height:9px;border-radius:50%;background:var(--bg);border:1px solid var(--bz)}
+.pr li b{display:block;font:400 clamp(60px,9vw,140px)/.9 var(--serif);color:var(--stone)}.pr li h3{font-size:clamp(30px,4vw,56px);margin:-.1em 0 10px}.pr li p{color:var(--mute);max-width:380px}
+/* ===== SERVIÇOS ===== */
+.sv{list-style:none;border-top:1px solid var(--line)}.sv li{display:grid;grid-template-columns:60px 1.2fr 1fr;gap:20px;align-items:baseline;padding:28px 0;border-bottom:1px solid var(--line);transition:padding .8s var(--ease)}
+.sv li:hover{padding-left:22px}.sv h3{font-size:clamp(26px,3.6vw,54px)}.sv p{color:var(--mute);opacity:0;transform:translateX(-10px);transition:.8s var(--ease)}.sv li:hover p{opacity:1;transform:none}
+/* ===== GALERIA ===== */
+.gal{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(14px,2vw,28px);align-items:start}
+.g1{grid-column:1/8;aspect-ratio:16/10}.g2{grid-column:9/13;aspect-ratio:3/4;margin-top:9vw}.g3{grid-column:2/5;aspect-ratio:1;margin-top:-5vw;z-index:1}.g4{grid-column:6/13;aspect-ratio:2/1;margin-top:4vw}
+/* ===== CONTATO ===== */
+.ct h2{font-size:clamp(56px,13.5vw,230px);line-height:.86}.ct h2 span{display:block}.ct h2 span+span{margin-left:11vw}
+.row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:30px;margin:60px 0}.row p{font:italic 400 28px var(--serif)}
+.ln{height:1px;background:rgba(239,235,228,.18)}.info{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding-top:30px}.info a,.info span{display:block;color:#a09a8f}.info b{display:block;font-weight:500;margin-bottom:6px;color:var(--bg)}
+footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;padding:60px 0 calc(40px + env(safe-area-inset-bottom,0px));color:#a09a8f}footer b{color:var(--bg);font-weight:500}
+/* ===== MODAL ===== */
+.modal{position:fixed;inset:0;z-index:70;background:var(--bg);overflow:auto;visibility:hidden;clip-path:inset(100% 0 0);transition:clip-path 1s var(--ease),visibility 0s 1s}
+.modal.on{visibility:visible;clip-path:inset(0);transition:clip-path 1s var(--ease)}.modal .ph{height:70svh}
+.modal .bd{display:grid;grid-template-columns:1fr 1fr;gap:40px;padding:50px clamp(20px,5vw,80px) 100px}.modal h2{font-size:clamp(44px,7vw,104px)}.modal p{color:var(--mute);max-width:460px}
+.x{position:fixed;top:calc(18px + env(safe-area-inset-top,0px));right:clamp(12px,4vw,60px);z-index:2;color:#fff;mix-blend-mode:difference;min-height:44px;padding:0 10px}
+/* ===== CURSOR ===== */
+#cu{position:fixed;left:0;top:0;z-index:100;pointer-events:none;width:10px;height:10px;margin:-5px;border-radius:50%;background:#fff;mix-blend-mode:difference;display:none;transition:width .5s var(--ease),height .5s var(--ease),margin .5s var(--ease),background .3s}
+#cu span{position:absolute;inset:0;display:grid;place-items:center;font:500 9px var(--sans);letter-spacing:.2em;color:#000;opacity:0;white-space:nowrap}
+#cu.big{width:96px;height:96px;margin:-48px;background:#efebe4;mix-blend-mode:normal}#cu.big span{opacity:1}
+@media(hover:hover) and (pointer:fine){#cu{display:block}body,a,button{cursor:none}}
+/* ===== MOBILE ===== */
+@media(max-width:860px){
+header nav,header>.mi{display:none}.bg{display:block}
+.hero{display:block;height:100svh;min-height:560px}.hero .ph{position:absolute;inset:0}.hero h1{font-size:25vw;color:#fff;mix-blend-mode:normal;top:auto;bottom:130px;transform:none}.hero .cap{mix-blend-mode:normal;flex-direction:column;align-items:flex-start}.hero .top{mix-blend-mode:normal}.sc{display:none}
+.gp>*{grid-column:1/-1!important;margin:0!important}.p2{width:76%;margin-left:auto!important}.p3{width:84%}.p1 .ph,.p4 .ph{aspect-ratio:4/5}
+.pj .in{opacity:1;transform:none}.ft .ph{height:70svh}.ft .card{margin-top:-18vw}
+.cas,.pr,.modal .bd{grid-template-columns:1fr}.cas .ph{order:-1;aspect-ratio:4/5}.pr .st{position:static}
+.pe:first-child,.pe:last-child{grid-column:1/-1}.pe:last-child{width:80%;margin:0 0 0 auto}
+.sv li{grid-template-columns:36px 1fr}.sv p{grid-column:2;opacity:1;transform:none}
+.gal>*{grid-column:1/-1!important;margin:0!important}.g2,.g3{width:70%}.g3{margin-left:auto!important}
+.info{grid-template-columns:1fr 1fr}.btn{width:100%}}
+@media(prefers-reduced-motion:reduce){*{transition-duration:.01s!important;animation:none!important}.r,.m,.f{opacity:1;transform:none;clip-path:none}.hero h1 b{transform:none}.hero .ph{clip-path:none}}
+</style>
+</head>
+<body>
+<div id="pg"></div><div id="cu"><span></span></div>
+<header id="top"><a href="#top" class="logo">YASMIN &amp; BIANCA</a>
+<nav class="mi"><a href="#projetos">Projetos</a><a href="#escritorio">Escritório</a><a href="#processo">Processo</a><a href="#contato">Contato</a></nav>
+<a class="mi" href="https://instagram.com/yasmin.bianca.arq" target="_blank" rel="noopener">Instagram ↗</a>
+<button class="bg" aria-label="Abrir menu"><i></i><i></i></button></header>
+<div class="menu"><a href="#projetos">Projetos</a><a href="#escritorio">Escritório</a><a href="#processo">Processo</a><a href="#contato">Contato</a><p class="mi">Curitiba · São José dos Pinhais · Cuiabá</p></div>
+
+<main>
+<section class="hero" aria-label="Início">
+<p class="mi top f">Arquitetura &amp; Interiores</p>
+<div class="ph" data-l="Hero — substituir por fotografia" role="img" aria-label="Fotografia de arquitetura contemporânea"></div>
+<h1><span><b>Yasmin</b></span><span><b><i>&amp;</i> Bianca</b></span></h1>
+<div class="cap f"><div><p class="q">Espaços pensados para serem vividos.</p><p class="mi">Curitiba · São José dos Pinhais · Cuiabá</p></div><span class="mi sc">Scroll</span></div>
+</section>
+
+<section class="sec w" id="projetos"><span class="n mi">01 — Projetos</span>
+<div class="head r"><h2 class="h2">Projetos<br><em>selecionados</em></h2><p class="mi" style="color:var(--mute)">04 obras</p></div>
+<div class="gp">
+<figure class="p1 r"><button class="pj" data-i="0"><div class="ph hv a" data-l="Residência Alvorada" role="img" aria-label="Residência Alvorada"></div><div class="in"><span class="mi">Ver projeto</span><p>Volumes calmos e luz natural para o dia a dia.</p></div><figcaption class="cp"><h3>Residência Alvorada</h3><span class="mi">Residencial · 2025</span></figcaption></button></figure>
+<figure class="p2 r"><button class="pj" data-i="1"><div class="ph hv c" data-l="Casa Contemporânea" role="img" aria-label="Casa Contemporânea"></div><div class="in"><span class="mi">Ver projeto</span><p>Matéria, proporção e silêncio.</p></div><figcaption class="cp"><h3>Casa Contemporânea</h3><span class="mi">2024</span></figcaption></button></figure>
+<figure class="p3 r"><button class="pj" data-i="2"><div class="ph hv d" data-l="Apartamento MM" role="img" aria-label="Apartamento MM"></div><div class="in"><span class="mi">Ver projeto</span><p>Interiores de atmosfera serena.</p></div><figcaption class="cp"><h3>Apartamento MM</h3><span class="mi">Interiores · 2025</span></figcaption></button></figure>
+<figure class="p4 r"><button class="pj" data-i="3"><div class="ph hv e" data-l="Loja Despertar" role="img" aria-label="Loja Despertar"></div><div class="in"><span class="mi">Ver projeto</span><p>Identidade traduzida em espaço.</p></div><figcaption class="cp"><h3>Loja Despertar</h3><span class="mi">Comercial · 2025</span></figcaption></button></figure>
+</div></section>
+
+<section class="ft"><span class="n mi" style="color:#fff;mix-blend-mode:difference">02 — Destaque</span>
+<div class="ph hv b m" data-l="Loja Despertar — imagem principal" role="img" aria-label="Loja Despertar"></div>
+<div class="card r"><p class="mi" style="color:var(--mute)">Projeto em destaque · Comercial</p><h2>Loja Despertar</h2><p class="mi" style="margin-bottom:22px">Arquitetura &amp; Interiores</p>
+<q>Uma composição entre matéria, luz, textura e identidade.</q><dl class="mi"><dt>Arquitetura</dt><dt>Interiores</dt><dt>Curadoria</dt><dt>Design</dt></dl></div>
+<div class="sec"></div></section>
+
+<section class="sec w dk"><span class="n mi">03 — Casacor</span>
+<div class="cas"><div class="r"><p class="mi" style="color:var(--bz);margin-bottom:24px">CASACOR</p><h2>Arquitetura que <em>ultrapassa</em> o espaço.</h2>
+<p>Projetos pensados para criar experiências, atmosferas e novas formas de habitar.</p>
+<a class="btn mi" href="https://instagram.com/yasmin.bianca.arq" target="_blank" rel="noopener">Ver projeto <span>↗</span></a></div>
+<div class="ph hv d m" data-l="CASACOR — ambiente" role="img" aria-label="Ambiente criado para a CASACOR"></div></div></section>
+
+<section class="sec w off" id="escritorio"><span class="n mi">04 — Escritório</span>
+<h2 class="h2 r">Duas visões.<span><em>Uma arquitetura.</em></span></h2>
+<div class="duo"><article class="pe r"><div class="ph hv a" data-l="Foto — Yasmin" role="img" aria-label="Retrato de Yasmin Maia"></div><h3>Yasmin Maia</h3><p class="mi" style="color:var(--bz)">Arquitetura</p><p>Texto institucional a ser substituído: uma visão de projeto que parte do lugar, da luz e das pessoas.</p></article>
+<article class="pe r"><div class="ph hv e" data-l="Foto — Bianca" role="img" aria-label="Retrato de Bianca Marques"></div><h3>Bianca Marques</h3><p class="mi" style="color:var(--bz)">Arquitetura e Interiores</p><p>Texto institucional a ser substituído: um olhar atento à matéria, à atmosfera e ao detalhe.</p></article></div></section>
+
+<section class="sec w ph2"><span class="n mi">05 — Filosofia</span><div>
+<h2 id="wd">Criar espaços é criar experiências.</h2>
+<div class="sm r mi"><p>Cada projeto começa pela escuta.</p><p>Luz, matéria e proporção como método.</p><p>Espaços que acolhem o tempo.</p></div></div></section>
+
+<section class="sec w" id="processo"><span class="n mi">06 — Processo</span>
+<div class="pr"><div class="st"><h2 class="h2">Do primeiro traço <em>ao espaço.</em></h2></div>
+<ol id="ol"><li><b>01</b><h3>Conversa</h3><p>Escuta atenta de desejos, rotina e do lugar.</p></li><li><b>02</b><h3>Conceito</h3><p>Ideias traduzidas em partido, materiais e atmosfera.</p></li><li><b>03</b><h3>Desenvolvimento</h3><p>Projeto detalhado, com precisão técnica e estética.</p></li><li><b>04</b><h3>Realização</h3><p>Acompanhamento para que o projeto se torne espaço.</p></li></ol></div></section>
+
+<section class="sec w" style="padding-top:0"><span class="n mi">07 — Serviços</span>
+<ul class="sv"><li class="r"><span class="mi">01</span><h3>Arquitetura residencial</h3><p>Casas e apartamentos pensados para a vida real.</p></li>
+<li class="r"><span class="mi">02</span><h3>Arquitetura comercial</h3><p>Espaços que traduzem a identidade de cada marca.</p></li>
+<li class="r"><span class="mi">03</span><h3>Interiores</h3><p>Mobiliário, luz e materiais em uma só composição.</p></li>
+<li class="r"><span class="mi">04</span><h3>Reformas</h3><p>Um novo olhar sobre espaços existentes.</p></li>
+<li class="r"><span class="mi">05</span><h3>Consultoria</h3><p>Orientação objetiva para decisões de projeto.</p></li>
+<li class="r"><span class="mi">06</span><h3>Projetos personalizados</h3><p>Soluções autorais, desenhadas sob medida.</p></li></ul></section>
+
+<section class="sec w" style="padding-top:0"><span class="n mi">08 — Galeria</span>
+<div class="gal"><div class="ph hv a g1 m" data-l="Galeria 01" role="img" aria-label="Fotografia arquitetônica"></div><div class="ph hv c g2 m" data-l="Galeria 02" role="img" aria-label="Detalhe de material"></div><div class="ph hv e g3 m" data-l="Galeria 03" role="img" aria-label="Detalhe de luz"></div><div class="ph hv d g4 m" data-l="Galeria 04" role="img" aria-label="Ambiente interior"></div></div></section>
+
+<section class="sec w dk ct" id="contato"><span class="n mi">09 — Contato</span>
+<h2 class="r"><span>Vamos criar</span><span><em>algo único?</em></span></h2>
+<div class="row r"><p>Conte-nos sobre seu projeto.</p><a class="btn mi" href="https://wa.me/5500000000000?text=Ol%C3%A1%21%20Gostaria%20de%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener">Iniciar conversa <span>↗</span></a></div>
+<div class="ln"></div>
+<div class="info mi"><div><b>Instagram</b><a href="https://instagram.com/yasmin.bianca.arq" target="_blank" rel="noopener">@yasmin.bianca.arq</a></div><div><b>E-mail</b><a href="mailto:contato@seudominio.com.br">contato@seudominio.com.br</a></div><div><b>Atendimento</b><span>Curitiba</span><span>São José dos Pinhais</span></div><div><b>&nbsp;</b><span>Cuiabá</span></div></div>
+<footer class="mi"><div><b>YASMIN &amp; BIANCA</b><br>Arquitetura &amp; Interiores</div><div><a href="https://instagram.com/yasmin.bianca.arq" target="_blank" rel="noopener">Instagram ↗</a> &nbsp; <a href="https://wa.me/5500000000000" target="_blank" rel="noopener">WhatsApp ↗</a> &nbsp; <a href="mailto:contato@seudominio.com.br">E-mail ↗</a></div><div>© 2026 Yasmin &amp; Bianca</div></footer></section>
+</main>
+
+<div class="modal" aria-hidden="true" role="dialog"><button class="x mi" aria-label="Fechar">Fechar ✕</button><div class="ph" id="mp" role="img" aria-label="Imagem do projeto"></div>
+<div class="bd"><div><p class="mi" style="color:var(--mute);margin-bottom:14px" id="mm"></p><h2 id="mt"></h2></div><div><p id="md"></p><p class="mi" style="margin-top:28px;color:var(--bz)">Imagens e texto completo a inserir com o material real.</p></div></div></div>
+
+<script>
+/* DADOS DOS PROJETOS — substituir pelo conteúdo real */
+const P=[{t:'Residência Alvorada',m:'Residencial · Curitiba · 2025',d:'Descrição a inserir. Uma residência pensada para a luz, a circulação e a vida cotidiana.',c:'a'},
+{t:'Casa Contemporânea',m:'Residencial · São José dos Pinhais · 2024',d:'Descrição a inserir. Matéria, proporção e silêncio em uma composição contemporânea.',c:'c'},
+{t:'Apartamento MM',m:'Interiores · Curitiba · 2025',d:'Descrição a inserir. Interiores de atmosfera serena e detalhes precisos.',c:'d'},
+{t:'Loja Despertar',m:'Comercial · Cuiabá · 2025',d:'Descrição a inserir. Identidade traduzida em espaço, matéria e luz.',c:'e'}];
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],B=document.body,RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+addEventListener('load',()=>requestAnimationFrame(()=>B.classList.add('loaded')));
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
+$$('.r,.m').forEach(e=>io.observe(e));
+/* filosofia: palavras acendem com o scroll */
+const wd=$('#wd');wd.innerHTML=wd.textContent.split(' ').map(w=>`<span class="wd">${w}</span>`).join(' ');const W=$$('.wd'),LI=$$('#ol li'),OL=$('#ol');
+function tick(){const y=scrollY,h=document.documentElement.scrollHeight-innerHeight;$('#pg').style.transform=`scaleX(${h?y/h:0})`;
+ const r=wd.getBoundingClientRect(),p=Math.min(1,Math.max(0,(innerHeight*.85-r.top)/(innerHeight*.7)));W.forEach((w,i)=>w.classList.toggle('on',i<p*W.length+.5&&p>0));
+ const o=OL.getBoundingClientRect(),q=Math.min(1,Math.max(0,(innerHeight*.6-o.top)/o.height));OL.style.setProperty('--p',q);
+ LI.forEach(l=>l.classList.toggle('on',l.getBoundingClientRect().top<innerHeight*.65))}
+let t=0;addEventListener('scroll',()=>{if(!t){t=1;requestAnimationFrame(()=>{tick();t=0})}},{passive:true});tick();
+/* menu */
+$('.bg').onclick=()=>B.classList.toggle('open');$$('.menu a').forEach(a=>a.onclick=()=>B.classList.remove('open'));
+/* modal */
+const M=$('.modal');
+$$('.pj').forEach(b=>b.onclick=()=>{const p=P[+b.dataset.i];$('#mp').className='ph '+p.c;$('#mp').dataset.l=p.t;$('#mt').textContent=p.t;$('#mm').textContent=p.m;$('#md').textContent=p.d;M.classList.add('on');M.setAttribute('aria-hidden','false');M.scrollTop=0;B.style.overflow='hidden'});
+const cl=()=>{M.classList.remove('on');M.setAttribute('aria-hidden','true');B.style.overflow=''};$('.x').onclick=cl;addEventListener('keydown',e=>e.key==='Escape'&&cl());
+/* cursor */
+const cu=$('#cu'),cs=cu.firstElementChild;
+if(matchMedia('(hover:hover) and (pointer:fine)').matches){let x=0,y=0,tx=0,ty=0;addEventListener('mousemove',e=>{tx=e.clientX;ty=e.clientY});
+(function f(){x+=(tx-x)*.25;y+=(ty-y)*.25;cu.style.transform=`translate(${x}px,${y}px)`;requestAnimationFrame(f)})();
+document.addEventListener('mouseover',e=>{const t=e.target;if(t.closest('.pj,.ft .ph')){cu.classList.add('big');cs.textContent='VER PROJETO'}else if(t.closest('a,button')){cu.classList.add('big');cs.textContent='ABRIR'}else cu.classList.remove('big')})}
+</script>
+</body>
+</html>
